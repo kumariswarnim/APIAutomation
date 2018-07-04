@@ -1,0 +1,200 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "getFriendList",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "type": "string",
+      "id": "status"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "list": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "uid": {
+                "type": "integer",
+                "id": "uid"
+              },
+              "name": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "id": "name"
+              },
+              "gender": {
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "id": "gender"
+              },
+              "has_avatar": {
+                "type": "boolean",
+                "id": "has_avatar"
+              },
+              "avatar": {
+                "type": "string",
+                "id": "avatar"
+              },
+              "avatar_variations": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "small": {
+                    "type": "string",
+                    "id": "small"
+                  },
+                  "large": {
+                    "type": "string",
+                    "id": "large"
+                  },
+                  "500_500": {
+                    "type": "string",
+                    "id": "500_500"
+                  },
+                  "original": {
+                    "type": "string",
+                    "id": "original"
+                  }
+                },
+                "id": "avatar_variations",
+                "required": [
+                  "small",
+                  "large",
+                  "500_500",
+                  "original"
+                ]
+              },
+              "country": {
+                "type": "string",
+                "id": "country"
+              },
+              "country_code": {
+                "type": "string",
+                "id": "country_code"
+              },
+              "berries": {
+                "type": "integer",
+                "id": "berries"
+              },
+              "languages": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "interface": {
+                    "type": "string",
+                    "id": "interface"
+                  },
+                  "learning_default": {
+                    "type": "string",
+                    "id": "learning_default"
+                  },
+                  "learning": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "minProperties": 1,
+                    "patternProperties": {
+                      "^(en|es|de|fr|it|pt|pl|ru|tr|vi|ar|ja|zh|ind|ko)$": {
+                        "type": "string",
+                        "enum": [
+                          "beginner",
+                          "intermediate",
+                          "advanced",
+                          "native"
+                        ]
+                      }
+                    },
+                    "id": "learning"
+                  },
+                  "spoken": {
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "minProperties": 1,
+                        "patternProperties": {
+                          "^(en|es|de|fr|it|pt|pl|ru|tr|vi|ar|ja|zh|ind|ko)$": {
+                            "type": "string",
+                            "enum": [
+                              "beginner",
+                              "intermediate",
+                              "advanced",
+                              "native"
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        "type": "array"
+                      }
+                    ]
+                  }
+                },
+                "id": "languages",
+                "required": [
+                  "interface",
+                  "learning_default",
+                  "learning",
+                  "spoken"
+                ]
+              },
+              "is_friend": {
+                "type": "string",
+                "id": "is_friend"
+              }
+            },
+            "id": "items",
+            "required": [
+              "uid",
+              "name",
+              "gender",
+              "has_avatar",
+              "avatar",
+              "avatar_variations",
+              "country",
+              "country_code",
+              "berries",
+              "languages",
+              "is_friend"
+            ]
+          },
+          "id": "list"
+        },
+        "count": {
+          "type": "integer",
+          "id": "count"
+        },
+        "next": {
+          "type": "integer",
+          "id": "next"
+        }
+      },
+      "id": "data",
+      "required": [
+        "list",
+        "count",
+        "next"
+      ]
+    }
+  },
+  "required": [
+    "status",
+    "data"
+  ]
+}

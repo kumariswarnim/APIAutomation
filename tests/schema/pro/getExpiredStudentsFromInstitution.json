@@ -1,0 +1,163 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "getExpiredStudentsFromInstitution",
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "id": "/properties/status",
+      "type": "string"
+    },
+    "data": {
+      "id": "/properties/data",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "list": {
+          "id": "/properties/data/properties/list",
+          "type": "array",
+          "items": {
+            "id": "/properties/data/properties/list/items",
+            "type": "object",
+            "properties": {
+              "id": {
+                "id": "/properties/data/properties/list/items/properties/id",
+                "type": "integer"
+              },
+              "uid": {
+                "id": "/properties/data/properties/list/items/properties/uid",
+                "type": "integer"
+              },
+              "email": {
+                "id": "/properties/data/properties/list/items/properties/email",
+                "type": "string"
+              },
+              "name": {
+                "id": "/properties/data/properties/list/items/properties/name",
+                "type": "string"
+              },
+              "expires_at": {
+                "id": "/properties/data/properties/list/items/properties/expires_at",
+                "type": "integer"
+              },
+              "profile_picture": {
+                "id": "/properties/data/properties/list/items/properties/profile_picture",
+                "type": "string"
+              },
+              "last_visited": {
+                "id": "/properties/data/properties/list/items/properties/last_visited",
+                "type": "integer"
+              },
+              "classroom_names": {
+                "id": "/properties/data/properties/list/items/properties/classroom_names",
+                "type": "array"
+              },
+              "starting_level": {
+                "id": "/properties/data/properties/list/items/properties/starting_level",
+                "type": "string"
+              },
+              "session_length_3d": {
+                "id": "/properties/data/properties/list/items/properties/session_length_3d",
+                "type": "integer"
+              },
+              "session_length_7d": {
+                "id": "/properties/data/properties/list/items/properties/session_length_7d",
+                "type": "integer"
+              },
+              "session_length_30d": {
+                "id": "/properties/data/properties/list/items/properties/session_length_30d",
+                "type": "integer"
+              },
+              "session_length_lifetime": {
+                "id": "/properties/data/properties/list/items/properties/session_length_lifetime",
+                "type": "integer"
+              },
+              "session_created_at": {
+                "id": "/properties/data/properties/list/items/properties/session_created_at",
+                "type": "integer"
+              },
+              "session_updated_at": {
+                "id": "/properties/data/properties/list/items/properties/session_updated_at",
+                "type": "integer"
+              },
+              "units_completed": {
+                "id": "/properties/data/properties/list/items/properties/units_completed",
+                "type": "integer"
+              },
+              "lessons_completed": {
+                "id": "/properties/data/properties/list/items/properties/lessons_completed",
+                "type": "integer"
+              },
+              "activities_completed": {
+                "id": "/properties/data/properties/list/items/properties/activities_completed",
+                "type": "integer"
+              },
+              "current_level": {
+                "id": "/properties/data/properties/list/items/properties/current_level",
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "progress": {
+                "id": "/properties/data/properties/list/items/properties/progress",
+                "type": "integer"
+              },
+              "learning_language": {
+                "id": "/properties/data/properties/list/items/properties/learning_language",
+                "type": "string"
+              },
+              "certificates": {
+                "id": "/properties/data/properties/list/items/properties/certificates",
+                "type": "array"
+              },
+              "learning_time": {
+                "id": "/properties/data/properties/list/items/properties/learning_time",
+                "type": "integer"
+              }
+            },
+            "required": [
+              "id",
+              "uid",
+              "email",
+              "name",
+              "expires_at",
+              "profile_picture",
+              "last_visited",
+              "classroom_names",
+              "starting_level",
+              "units_completed",
+              "lessons_completed",
+              "activities_completed",
+              "current_level",
+              "progress",
+              "learning_language",
+              "certificates",
+              "learning_time"
+            ]
+          }
+        },
+        "count": {
+          "id": "/properties/data/properties/count",
+          "type": "integer"
+        },
+        "next": {
+          "id": "/properties/data/properties/next",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "list",
+        "count",
+        "next"
+      ]
+    }
+  },
+  "required": [
+    "status",
+    "data"
+  ]
+}

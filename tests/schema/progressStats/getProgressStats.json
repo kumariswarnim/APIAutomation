@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "getProgressStats",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "id": "status",
+      "type": "string"
+    },
+    "data": {
+      "id": "data",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "fluency": {
+          "id": "fluency",
+          "type": "integer"
+        },
+        "words_learned": {
+          "id": "words_learned",
+          "type": "integer"
+        },
+        "certificates": {
+          "id": "certificates",
+          "type": "integer"
+        },
+        "active_days": {
+          "id": "active_days",
+          "type": "integer"
+        },
+        "days_studied": {
+          "id": "days_studied",
+          "type": "object"
+        }
+      },
+      "required": [
+        "fluency",
+        "words_learned",
+        "certificates",
+        "active_days",
+        "days_studied"
+      ]
+    }
+  },
+  "required": [
+    "status",
+    "data"
+  ]
+}

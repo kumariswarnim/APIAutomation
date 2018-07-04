@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "id": "getReferrarInfo",
+  "type": "object",
+  "additionalProperties": "false",
+  "properties": {
+    "status": {
+      "id": "status",
+      "type": "string"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": "false",
+      "properties": {
+        "uid": {
+          "id": "uid",
+          "type": "integer"
+        },
+        "avatar": {
+          "id": "avatar",
+          "type": "string"
+        },
+        "name": {
+          "id": "name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "uid",
+        "avatar",
+        "name"
+      ]
+    }
+  },
+  "required": [
+    "status",
+    "data"
+  ]
+}

@@ -1,0 +1,507 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "getExercisesForSpecificUser",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "type": "string",
+      "id": "status"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "exercises": {
+          "type": "object",
+          "additionalProperties": false,
+          "minProperties": 1,
+          "patternProperties": {
+            "^(en|es|de|fr|it|pt|pl|ru|tr|vi|ar|ja|zh|ind|ko)$": {
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "id": {
+                    "type": "integer",
+                    "id": "id"
+                  },
+                  "language": {
+                    "type": "string",
+                    "id": "language"
+                  },
+                  "exercise_id": {
+                    "type": "string",
+                    "id": "exercise_id"
+                  },
+                  "type": {
+                    "type": "string",
+                    "id": "type"
+                  },
+                  "input": {
+                    "type": "string",
+                    "id": "input"
+                  },
+                  "voice": {
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "minProperties": 2,
+                        "properties": {
+                          "duration": {
+                            "type": "number",
+                            "minimum": "1",
+                            "maximum": "30",
+                            "id": "voice"
+                          },
+                          "path": {
+                            "type": "string",
+                            "id": "path"
+                          }
+                        }
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ]
+                  },
+                  "author": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "uid": {
+                        "type": "integer",
+                        "id": "uid"
+                      },
+                      "name": {
+                        "oneOf": [
+                          {
+                            "type": "null"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ],
+                        "id": "name"
+                      },
+                      "languages": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "interface": {
+                            "type": "string",
+                            "id": "interface"
+                          },
+                          "learning_default": {
+                            "type": "string",
+                            "id": "learning_default"
+                          },
+                          "learning": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "minProperties": 1,
+                            "patternProperties": {
+                              "^(en|es|de|fr|it|pt|pl|ru|tr|vi|ar|ja|zh|ind|ko)$": {
+                                "type": "string",
+                                "enum": [
+                                  "beginner",
+                                  "intermediate",
+                                  "advanced",
+                                  "native"
+                                ]
+                              }
+                            },
+                            "id": "learning"
+                          },
+                          "spoken": {
+                            "oneOf": [
+                              {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "minProperties": 1,
+                                "patternProperties": {
+                                  "^(en|es|de|fr|it|pt|pl|ru|tr|vi|ar|ja|zh|ind|ko)$": {
+                                    "type": "string",
+                                    "enum": [
+                                      "beginner",
+                                      "intermediate",
+                                      "advanced",
+                                      "native"
+                                    ]
+                                  }
+                                }
+                              },
+                              {
+                                "type": "array"
+                              }
+                            ]
+                          }
+                        },
+                        "id": "languages",
+                        "required": [
+                          "interface",
+                          "learning_default",
+                          "learning",
+                          "spoken"
+                        ]
+                      },
+                      "country": {
+                        "type": "string",
+                        "id": "country"
+                      },
+                      "country_code": {
+                        "type": "string",
+                        "id": "country_code"
+                      },
+                      "city": {
+                        "oneOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "id": "city"
+                      },
+                      "berries": {
+                        "type": "integer",
+                        "id": "berries"
+                      },
+                      "has_avatar": {
+                        "type": "boolean",
+                        "id": "has_avatar"
+                      },
+                      "avatar": {
+                        "type": "string",
+                        "id": "avatar"
+                      },
+                      "avatar_variations": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "small": {
+                            "type": "string",
+                            "id": "small"
+                          },
+                          "large": {
+                            "type": "string",
+                            "id": "large"
+                          },
+                          "500_500": {
+                            "type": "string",
+                            "id": "500_500"
+                          },
+                          "original": {
+                            "type": "string",
+                            "id": "original"
+                          }
+                        },
+                        "id": "avatar_variations",
+                        "required": [
+                          "small",
+                          "large",
+                          "500_500",
+                          "original"
+                        ]
+                      },
+                      "gender": {
+                        "oneOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "id": "gender"
+                      },
+                      "about_me": {
+                        "oneOf": [
+                          {
+                            "type": "string"
+                          },
+                          {
+                            "type": "null"
+                          }
+                        ],
+                        "id": "about_me"
+                      },
+                      "is_premium": {
+                        "type": "boolean",
+                        "id": "is_premium"
+                      },
+                      "is_friend": {
+                        "oneOf": [
+                          {
+                            "type": "null"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ],
+                        "id": "is_friend"
+                      }
+                    },
+                    "id": "author",
+                    "required": [
+                      "uid",
+                      "name",
+                      "languages",
+                      "country",
+                      "country_code",
+                      "city",
+                      "berries",
+                      "has_avatar",
+                      "avatar",
+                      "avatar_variations",
+                      "gender",
+                      "about_me",
+                      "is_premium",
+                      "is_friend"
+                    ]
+                  },
+                  "rating": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "rate_count": {
+                        "type": "integer",
+                        "id": "rate_count"
+                      },
+                      "average": {
+                        "type": "number",
+                        "id": "average"
+                      },
+                      "user": {
+                        "oneOf": [
+                          {
+                            "type": "null"
+                          },
+                          {
+                            "type": "integer"
+                          }
+                        ],
+                        "id": "user"
+                      }
+                    },
+                    "id": "rating",
+                    "required": [
+                      "rate_count",
+                      "average",
+                      "user"
+                    ]
+                  },
+                  "activity": {
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "id": {
+                            "type": "string",
+                            "id": "id"
+                          },
+                          "instructions": {
+                            "type": "string",
+                            "id": "instructions"
+                          },
+                          "images": {
+                            "type": "array",
+                            "items": {
+                              "type": "string"
+                            },
+                            "id": "images"
+                          }
+                        },
+                        "required": [
+                          "id",
+                          "instructions",
+                          "images"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "picture": {
+                            "type": "string",
+                            "id": "picture"
+                          }
+                        },
+                        "required": [
+                          "picture"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "picture": {
+                            "type": "null",
+                            "id": "picture"
+                          }
+                        },
+                        "required": [
+                          "picture"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                          "picture": {
+                            "type": "null",
+                            "id": "picture"
+                          },
+                          "video": {
+                            "type": "string",
+                            "id": "video"
+                          }
+                        },
+                        "required": [
+                          "picture",
+                          "video"
+                        ]
+                      }
+                    ],
+                    "id": "activity"
+                  },
+                  "seen": {
+                    "type": "boolean",
+                    "id": "seen"
+                  },
+                  "translationMap": {
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "patternProperties": {
+                          "^str_[\\w]+$": {
+                            "type": "object",
+                            "additionalProperties": false,
+                            "minProperties": 1,
+                            "patternProperties": {
+                              "^(en|es|de|fr|it|pt|pl|ru|tr|vi|ar|ja|zh|ind|ko)$": {
+                                "type": "object",
+                                "minProperties": 1,
+                                "additionalProperties": false,
+                                "properties": {
+                                  "value": {
+                                    "type": "string"
+                                  },
+                                  "native": {
+                                    "type": "string"
+                                  },
+                                  "phonetic": {
+                                    "type": "string"
+                                  }
+                                },
+                                "required": [
+                                  "value"
+                                ]
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": "array"
+                      }
+                    ],
+                    "id": "translationMap"
+                  },
+                  "created_at": {
+                    "type": "integer",
+                    "id": "created_at"
+                  },
+                  "best_correction_id": {
+                    "oneOf": [
+                      {
+                        "type": "integer"
+                      },
+                      {
+                        "type": "null"
+                      }
+                    ],
+                    "id": "best_correction_id"
+                  },
+                  "flagged": {
+                    "type": "boolean",
+                    "id": "flagged"
+                  },
+                  "comment_count": {
+                    "type": "integer",
+                    "id": "comment_count"
+                  }
+                },
+                "required": [
+                  "id",
+                  "language",
+                  "exercise_id",
+                  "type",
+                  "input",
+                  "voice",
+                  "author",
+                  "rating",
+                  "activity",
+                  "seen",
+                  "translationMap",
+                  "created_at",
+                  "best_correction_id",
+                  "flagged",
+                  "comment_count"
+                ]
+              }
+            }
+          },
+          "id": "exercises"
+        },
+        "pagination": {
+          "type": "object",
+          "additionalProperties": false,
+          "minProperties": 1,
+          "patternProperties": {
+            "^(en|es|de|fr|it|pt|pl|ru|tr|vi|ar|ja|zh|ind|ko)$": {
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "total_posts": {
+                    "type": "integer",
+                    "id": "total_posts"
+                  },
+                  "total_pages": {
+                    "type": "integer",
+                    "id": "total_pages"
+                  },
+                  "this_page": {
+                    "type": "integer",
+                    "id": "this_page"
+                  }
+                },
+                "id": "course",
+                "required": [
+                  "total_posts",
+                  "total_pages",
+                  "this_page"
+                ]
+              }
+            },
+            "id": "pagination"
+          }
+        },
+        "id": "data",
+        "required": [
+          "exercises",
+          "pagination"
+        ]
+      }
+    },
+    "required": [
+      "status",
+      "data"
+    ]
+  }
+}

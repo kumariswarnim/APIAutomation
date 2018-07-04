@@ -1,0 +1,85 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "getInstitutionClassrooms",
+  "additionalProperties": false,
+  "properties": {
+    "data": {
+      "id": "/properties/data",
+      "items": {
+        "additionalProperties": false,
+        "id": "/properties/data/items",
+        "properties": {
+          "id": {
+            "id": "/properties/data/items/properties/id",
+            "type": "integer"
+          },
+          "instructors": {
+            "id": "/properties/data/items/properties/instructors",
+            "items": {
+              "additionalProperties": false,
+              "id": "/properties/data/items/properties/instructors/items",
+              "properties": {
+                "id": {
+                  "id": "/properties/data/items/properties/instructors/items/properties/id",
+                  "type": "integer"
+                },
+                "name": {
+                  "id": "/properties/data/items/properties/instructors/items/properties/name",
+                  "type": "string"
+                },
+                "profile_picture": {
+                  "id": "/properties/data/items/properties/instructors/items/properties/profile_picture",
+                  "type": "string"
+                }
+              },
+              "required": [
+                "profile_picture",
+                "id",
+                "name"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "language": {
+            "id": "/properties/data/items/properties/language",
+            "oneOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          },
+          "name": {
+            "id": "/properties/data/items/properties/name",
+            "type": "string"
+          },
+          "student_count": {
+            "id": "/properties/data/items/properties/student_count",
+            "type": "integer"
+          }
+        },
+        "required": [
+          "instructors",
+          "student_count",
+          "id",
+          "language",
+          "name"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "status": {
+      "id": "/properties/status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "status",
+    "data"
+  ],
+  "type": "object"
+}

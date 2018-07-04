@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "loginRegister",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "type": "string",
+      "id": "status"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "uid": {
+          "type": "integer",
+          "id": "uid"
+        },
+        "access_token": {
+          "type": "string",
+          "id": "access_token"
+        },
+        "new_user": {
+          "type": "boolean",
+          "id": "new_user"
+        }
+      },
+      "id": "data",
+      "required": [
+        "uid",
+        "access_token",
+        "new_user"
+      ]
+    }
+  },
+  "required": [
+    "status",
+    "data"
+  ]
+}

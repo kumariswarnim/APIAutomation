@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "getInstitutionInvites",
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "id": "/properties/status",
+      "type": "string"
+    },
+    "data": {
+      "additionalProperties": false,
+      "id": "/properties/data",
+      "type": "object",
+      "properties": {
+        "list": {
+          "additionalProperties": false,
+          "id": "/properties/data/properties/list",
+          "type": "array",
+          "items": {
+            "id": "/properties/data/properties/list/items",
+            "type": "object",
+            "properties": {
+              "email": {
+                "id": "/properties/data/properties/list/items/properties/email",
+                "type": "string"
+              },
+              "created_at": {
+                "id": "/properties/data/properties/list/items/properties/created_at",
+                "type": "integer"
+              },
+              "role": {
+                "id": "/properties/data/properties/list/items/properties/role",
+                "type": "string"
+              }
+            },
+            "required": [
+              "email",
+              "created_at",
+              "role"
+            ]
+          }
+        },
+        "count": {
+          "id": "/properties/data/properties/count",
+          "type": "integer"
+        },
+        "next": {
+          "id": "/properties/data/properties/next",
+          "type": "integer"
+        },
+        "required": [
+          "list",
+          "count",
+          "next"
+        ]
+      }
+    }
+  },
+  "required": [
+    "status",
+    "data"
+  ],
+  "type": "object"
+}

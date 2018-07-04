@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "getProgressStatsBadRequestError",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "message": {
+      "id": "message",
+      "type": "string",
+      "enum": [
+        "Language required"
+        ]
+    },
+    "code": {
+      "id": "code",
+      "type": "string"
+    },
+    "code_int": {
+      "id": "code_int",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "message",
+    "code",
+    "code_int"
+  ]
+}

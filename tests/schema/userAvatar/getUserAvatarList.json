@@ -1,0 +1,44 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "getUserAvatarList",
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "id": "/properties/status",
+      "type": "string"
+    },
+    "data": {
+      "additionalProperties": false,
+      "id": "/properties/data",
+      "type": "object",
+      "properties": {
+        "small": {
+          "id": "/properties/data/properties/small",
+          "type": "string"
+        },
+        "large": {
+          "id": "/properties/data/properties/large",
+          "type": "string"
+        },
+        "500_500": {
+          "id": "/properties/data/properties/500_500",
+          "type": "string"
+        },
+        "original": {
+          "id": "/properties/data/properties/original",
+          "type": "string"
+        }
+      },
+      "required": [
+        "small",
+        "large",
+        "500_500",
+        "original"
+      ]
+    }
+  },
+  "required": [
+    "status",
+    "data"
+  ]
+}

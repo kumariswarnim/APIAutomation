@@ -1,0 +1,800 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "userInfo",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "type": "string",
+      "id": "status"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "uid": {
+          "type": "integer",
+          "id": "uid"
+        },
+        "name": {
+          "type": "string",
+          "id": "name"
+        },
+        "profile_name": {
+          "type": "null",
+          "id": "profile_name"
+        },
+        "languages": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "interface": {
+              "type": "string",
+              "id": "interface"
+            },
+            "learning_default": {
+              "type": "string",
+              "id": "learning_default"
+            },
+            "learning": {
+              "type": "object",
+              "additionalProperties": false,
+              "minProperties": 1,
+              "patternProperties": {
+                "^(en|es|de|fr|it|pt|pl|ru|tr|vi|ar|ja|zh|ind|ko)$": {
+                  "type": "string",
+                  "enum": [
+                    "beginner",
+                    "intermediate",
+                    "advanced",
+                    "native"
+                  ]
+                }
+              },
+              "id": "learning"
+            },
+            "spoken": {
+              "oneOf": [
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "minProperties": 1,
+                  "patternProperties": {
+                    "^(en|es|de|fr|it|pt|pl|ru|tr|vi|ar|ja|zh|ind|ko)$": {
+                      "type": "string",
+                      "enum": [
+                        "beginner",
+                        "intermediate",
+                        "advanced",
+                        "native"
+                      ]
+                    }
+                  }
+                },
+                {
+                  "type": "array"
+                }
+              ]
+            }
+          },
+          "id": "languages",
+          "required": [
+            "interface",
+            "learning_default",
+            "learning",
+            "spoken"
+          ]
+        },
+        "country": {
+          "type": "string",
+          "id": "country"
+        },
+        "country_code": {
+          "type": "string",
+          "id": "country_code"
+        },
+        "city": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "id": "city"
+        },
+        "berries": {
+          "type": "integer",
+          "id": "berries"
+        },
+        "age": {
+          "type": "integer",
+          "id": "age"
+        },
+        "has_avatar": {
+          "type": "boolean",
+          "id": "has_avatar"
+        },
+        "avatar": {
+          "type": "string",
+          "id": "avatar"
+        },
+        "gender": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "id": "gender"
+        },
+        "birthday": {
+          "type": "integer",
+          "id": "birthday"
+        },
+        "occupation": {
+          "oneOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "id": "occupation"
+        },
+        "about_me": {
+          "type": "null",
+          "id": "about_me"
+        },
+        "app_package_name": {
+          "type": "null",
+          "id": "app_package_name"
+        },
+        "last_login": {
+          "type": "integer",
+          "id": "last_login"
+        },
+        "created": {
+          "type": "integer",
+          "id": "created"
+        },
+        "last_access": {
+          "type": "integer",
+          "id": "last_access"
+        },
+        "friends": {
+          "type": "integer",
+          "id": "friends"
+        },
+        "is_friend": {
+          "type": "null",
+          "id": "is_friend"
+        },
+        "is_premium": {
+          "type": "boolean",
+          "id": "is_premium"
+        },
+        "online_status": {
+          "type": "integer",
+          "id": "online_status"
+        },
+        "premium_provider": {
+          "type": "null",
+          "id": "premium_provider"
+        },
+        "avatar_variations": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "small": {
+              "type": "string",
+              "id": "small"
+            },
+            "large": {
+              "type": "string",
+              "id": "large"
+            },
+            "500_500": {
+              "type": "string",
+              "id": "500_500"
+            },
+            "original": {
+              "type": "string",
+              "id": "original"
+            }
+          },
+          "id": "avatar_variations",
+          "required": [
+            "small",
+            "large",
+            "500_500",
+            "original"
+          ]
+        },
+        "flag": {
+          "type": "string",
+          "id": "flag"
+        },
+        "free_trial_eligible": {
+          "type": "boolean",
+          "id": "free_trial_eligible"
+        },
+        "spoken_language_chosen": {
+          "type": "boolean",
+          "id": "spoken_language_chosen"
+        },
+        "thumbs": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "made": {
+              "type": "integer",
+              "id": "made"
+            },
+            "received": {
+              "type": "integer",
+              "id": "received"
+            },
+            "total": {
+              "type": "integer",
+              "id": "total"
+            },
+            "percentage": {
+              "type": "integer",
+              "id": "percentage"
+            },
+            "likes_received": {
+              "type": "integer",
+              "id": "likes_received"
+            }
+          },
+          "id": "thumbs",
+          "required": [
+            "made",
+            "received",
+            "total",
+            "percentage",
+            "likes_received"
+          ]
+        },
+        "checklist_complete": {
+          "type": "boolean",
+          "id": "checklist_complete"
+        },
+        "exercises_done": {
+          "type": "integer",
+          "id": "exercises_done"
+        },
+        "corrections_done": {
+          "type": "integer",
+          "id": "corrections_done"
+        },
+        "course_access": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "travel": {
+              "type": "boolean",
+              "id": "travel"
+            },
+            "business": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "id": "business"
+            },
+            "mobile": {
+              "type": "array",
+              "items": {},
+              "id": "mobile"
+            }
+          },
+          "id": "course_access",
+          "required": [
+            "travel",
+            "business",
+            "mobile"
+          ]
+        },
+        "roles": {
+          "type": "array",
+          "items": {
+            "type": "integer"
+          },
+          "id": "roles"
+        },
+        "placement_chooser": {
+          "type": "boolean",
+          "id": "placement_chooser"
+        },
+        "placement_test_available": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "en": {
+              "type": "boolean",
+              "id": "en"
+            },
+            "de": {
+              "type": "boolean",
+              "id": "de"
+            },
+            "es": {
+              "type": "boolean",
+              "id": "es"
+            },
+            "fr": {
+              "type": "boolean",
+              "id": "fr"
+            },
+            "pt": {
+              "type": "boolean",
+              "id": "pt"
+            },
+            "it": {
+              "type": "boolean",
+              "id": "it"
+            }
+          }
+        },
+        "email": {
+          "type": "string",
+          "id": "email"
+        },
+        "premium_data": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "product": {
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "id": "product"
+            },
+            "created": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "id": "created"
+            },
+            "started": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "id": "started"
+            },
+            "next_charge": {
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "id": "next_charge"
+            },
+            "expiration": {
+              "type": "null",
+              "id": "expiration"
+            },
+            "cancelled": {
+              "oneOf": [
+                {
+                  "type": "boolean"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "id": "cancelled"
+            },
+            "platform": {
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "id": "platform"
+            },
+            "productId": {
+              "type": "null",
+              "id": "productId"
+            },
+            "market": {
+              "type": "null",
+              "id": "market"
+            },
+            "subscriptionType": {
+              "type": "null",
+              "id": "subscriptionType"
+            },
+            "type": {
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "id": "type"
+            },
+            "subscriptionId": {
+              "oneOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "null"
+                }
+              ],
+              "id": "subscriptionId"
+            },
+            "current_plan": {
+              "oneOf": [
+                {
+                  "type": "null"
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "id": {
+                      "type": "string",
+                      "id": "id"
+                    },
+                    "name": {
+                      "type": "string",
+                      "id": "name"
+                    },
+                    "price": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "amount": {
+                          "type": "string",
+                          "id": "amount"
+                        },
+                        "currencyCode": {
+                          "type": "string",
+                          "id": "currencyCode"
+                        },
+                        "currencySymbol": {
+                          "type": "string",
+                          "id": "currencySymbol"
+                        },
+                        "humanFormats": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "code": {
+                              "type": "string",
+                              "id": "code"
+                            },
+                            "symbol": {
+                              "type": "string",
+                              "id": "symbol"
+                            }
+                          },
+                          "id": "humanFormats",
+                          "required": [
+                            "code",
+                            "symbol"
+                          ]
+                        }
+                      },
+                      "id": "price",
+                      "required": [
+                        "amount",
+                        "currencyCode",
+                        "currencySymbol",
+                        "humanFormats"
+                      ]
+                    },
+                    "monthlyPrice": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "amount": {
+                          "type": "string",
+                          "id": "amount"
+                        },
+                        "currencyCode": {
+                          "type": "string",
+                          "id": "currencyCode"
+                        },
+                        "currencySymbol": {
+                          "type": "string",
+                          "id": "currencySymbol"
+                        },
+                        "humanFormats": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "code": {
+                              "type": "string",
+                              "id": "code"
+                            },
+                            "symbol": {
+                              "type": "string",
+                              "id": "symbol"
+                            }
+                          },
+                          "id": "humanFormats",
+                          "required": [
+                            "code",
+                            "symbol"
+                          ]
+                        }
+                      },
+                      "id": "monthlyPrice",
+                      "required": [
+                        "amount",
+                        "currencyCode",
+                        "currencySymbol",
+                        "humanFormats"
+                      ]
+                    },
+                    "months": {
+                      "type": "integer",
+                      "id": "months"
+                    },
+                    "saving": {
+                      "type": "integer",
+                      "id": "saving"
+                    },
+                    "active": {
+                      "type": "boolean",
+                      "id": "active"
+                    },
+                    "billing_period": {
+                      "type": "string",
+                      "id": "billing_period"
+                    }
+                  },
+                  "id": "current_plan",
+                  "required": [
+                    "id",
+                    "name",
+                    "price",
+                    "monthlyPrice",
+                    "months",
+                    "saving",
+                    "active",
+                    "billing_period"
+                  ]
+                }
+              ]
+            },
+            "upgrade_plan": {
+              "type": "null",
+              "id": "upgrade_plan"
+            },
+            "suspended_plan": {
+              "type": "null",
+              "id": "suspended_plan"
+            },
+            "partner": {
+              "type": "null",
+              "id": "partner"
+            },
+            "partner_metadata": {
+              "type": "null",
+              "id": "partner_metadata"
+            },
+            "in_app_cancellation": {
+              "type": "boolean",
+              "id": "in_app_cancellation"
+            },
+            "id": "premium_data",
+            "required": [
+              "product",
+              "created",
+              "started",
+              "next_charge",
+              "expiration",
+              "cancelled",
+              "platform",
+              "productId",
+              "market",
+              "subscriptionType",
+              "type",
+              "subscriptionId",
+              "current_plan",
+              "upgrade_plan",
+              "suspended_plan",
+              "in_app_cancellation"
+            ]
+          }
+        },
+        "access_token": {
+          "type": "string",
+          "id": "access_token"
+        },
+        "fb_uid": {
+          "oneOf": [
+            {
+              "type": "null"
+            },
+            {
+              "type": "string"
+            }
+          ],
+          "id": "fb_uid"
+        },
+        "g_uid": {
+          "type": "null",
+          "id": "g_uid"
+        },
+        "goal": {
+          "type": "string",
+          "id": "goal"
+        },
+        "opt_in_promotions": {
+          "type": "boolean",
+          "id": "opt_in_promotions"
+        },
+        "best_corrections_awarded": {
+          "type": "integer",
+          "id": "best_corrections_awarded"
+        },
+        "notification_correction_received": {
+          "type": "boolean",
+          "id": "notification_correction_received"
+        },
+        "notification_correction_added": {
+          "type": "boolean",
+          "id": "notification_correction_added"
+        },
+        "notification_correction_requested": {
+          "type": "boolean",
+          "id": "notification_correction_requested"
+        },
+        "notification_correction_replies": {
+          "type": "boolean",
+          "id": "notification_correction_replies"
+        },
+        "notification_friend_requested": {
+          "type": "boolean",
+          "id": "notification_friend_requested"
+        },
+        "notification_friend_replied": {
+          "type": "boolean",
+          "id": "notification_friend_replied"
+        },
+        "notification_mute_all": {
+          "type": "boolean",
+          "id": "notification_mute_all"
+        },
+        "private_mode_friend_requested": {
+          "type": "boolean",
+          "id": "private_mode_friend_requested"
+        },
+        "notification_study_plan": {
+          "type": "boolean",
+          "id": "notification_study_plan"
+        },
+        "unique_username": {
+          "type": ["string", "null"],
+          "id": "unique_username"
+        },
+        "phone_data": {
+          "type": "array",
+          "id": "phone_data",
+          "items": {
+            "additionalProperties": false,
+            "id": "items",
+            "properties": {
+              "numeric_country_code": {
+                "id": "numeric_country_code",
+                "type": ["integer", "null"]
+              },
+              "country_code": {
+                "id": "country_code",
+                "type": ["string", "null"]
+              },
+              "phone_number": {
+                "id": "phone_number",
+                "type": ["integer", "null"]
+              },
+              "msisdn": {
+                "id": "msisdn",
+                "type": ["integer", "null"]
+              }
+            },
+            "required": [
+              "numeric_country_code",
+              "country_code",
+              "phone_number",
+              "msisdn"
+            ],
+            "type": "object"
+          }
+        }
+      },
+      "id": "data",
+      "required": [
+        "uid",
+        "name",
+        "profile_name",
+        "languages",
+        "country",
+        "country_code",
+        "city",
+        "berries",
+        "age",
+        "has_avatar",
+        "avatar",
+        "gender",
+        "birthday",
+        "occupation",
+        "about_me",
+        "app_package_name",
+        "last_login",
+        "created",
+        "last_access",
+        "friends",
+        "is_friend",
+        "is_premium",
+        "online_status",
+        "premium_provider",
+        "avatar_variations",
+        "flag",
+        "free_trial_eligible",
+        "thumbs",
+        "checklist_complete",
+        "exercises_done",
+        "corrections_done",
+        "course_access",
+        "roles",
+        "placement_chooser",
+        "placement_test_available",
+        "email",
+        "premium_data",
+        "access_token",
+        "fb_uid",
+        "g_uid",
+        "best_corrections_awarded",
+        "notification_correction_received",
+        "notification_correction_added",
+        "notification_correction_requested",
+        "notification_correction_replies",
+        "notification_friend_requested",
+        "notification_friend_replied",
+        "notification_mute_all",
+        "private_mode_friend_requested",
+        "notification_study_plan",
+        "phone_data",
+        "unique_username"
+      ]
+    }
+  },
+  "required": [
+    "status",
+    "data"
+  ]
+}

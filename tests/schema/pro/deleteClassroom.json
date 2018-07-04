@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "deleteClassroom",
+  "additionalProperties": false,
+  "properties": {
+    "data": {
+      "id": "/properties/data",
+      "type": "string"
+    },
+    "status": {
+      "id": "/properties/status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "status",
+    "data"
+  ],
+  "type": "object"
+}

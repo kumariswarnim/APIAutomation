@@ -1,0 +1,64 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "errorWithAppCode",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "type": "string",
+      "enum": [
+        "error"
+      ],
+      "id": "status"
+    },
+    "applicationCode": {
+      "type": "string",
+      "enum": [
+        "INVALID_CREDENTIALS",
+        "EMAIL_ALREADY_USED",
+        "EMAIL_BLANK",
+        "INVALID_REQUEST",
+        "INVALID_LANGUAGE",
+        "SAME_USER",
+        "FRIEND_REQUEST_EXISTS",
+        "USERS_ALREADY_FRIENDS",
+        "NO_PENDING_REQUEST",
+        "UNKNOWN_USER",
+        "PENDING_REQUEST",
+        "REJECTED_REQUEST",
+        "NOT_FOUND",
+        "EXERCISE_NOT_FOUND",
+        "INVALID_LANGUAGES",
+        "ACCESS_DENIED",
+        "REFERRAL_CODE_NOT_FOUND",
+        "REFERRAL_REDEEMED_CODE",
+        "NAME_BLANK",
+        "ACCOUNT_NOT_FOUND",
+        "INVALID_IDENTIFIER",
+        "FORBIDDEN",
+        "ACTIVE_STUDY_PLAN",
+        "INVALID_MOTIVATION",
+        "EMPTY_LANGUAGE",
+        "INVALID_GOAL_LEVEL",
+        "INVALID_LEARNING_TIME",
+        "INVALID_LEARNING_DAYS",
+        "INVALID_MINUTES_DAY",
+        "INVALID_NOTIFICATIONS",
+        "NO_ACCESS"
+      ],
+      "id": "applicationCode"
+    },
+    "errors": {
+      "type": [
+        "string",
+        "array"
+      ],
+      "id": "errors"
+    }
+  },
+  "required": [
+    "status",
+    "applicationCode",
+    "errors"
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "postStudyPlanEstimate",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "id": "/properties/status",
+      "type": "string"
+    },
+    "data": {
+      "id": "/properties/data",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "eta": {
+          "id": "/properties/data/properties/eta",
+          "type": "string"
+        },
+        "transaction_id": {
+          "id": "/properties/data/properties/transaction_id",
+          "type": "integer"
+        }
+      },
+      "required": [
+        "eta",
+        "transaction_id"
+      ]
+    }
+  },
+  "required": [
+    "status",
+    "data"
+  ]
+}

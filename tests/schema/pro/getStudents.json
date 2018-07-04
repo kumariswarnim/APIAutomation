@@ -1,0 +1,176 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "getStudents",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "data": {
+      "additionalProperties": false,
+      "id": "/properties/data",
+      "properties": {
+        "list": {
+          "id": "/properties/data/properties/list",
+          "items": {
+            "additionalProperties": false,
+            "id": "/properties/data/properties/items",
+            "properties": {
+              "activities_completed": {
+                "id": "/properties/data/properties/items/properties/activities_completed",
+                "type": "integer"
+              },
+              "certificates": {
+                "id": "/properties/data/properties/items/properties/certificates",
+                "items": {},
+                "type": "array"
+              },
+              "classroom_names": {
+                "id": "/properties/data/properties/items/properties/classroom_names",
+                "items": {
+                  "id": "/properties/data/properties/items/properties/classroom_names/items",
+                  "type": "string"
+                },
+                "type": "array"
+              },
+              "current_level": {
+                "id": "/properties/data/properties/items/properties/current_level",
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "email": {
+                "id": "/properties/data/properties/items/properties/email",
+                "type": "string"
+              },
+              "expires_at": {
+                "id": "/properties/data/properties/items/properties/expires_at",
+                "oneOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "id": {
+                "id": "/properties/data/properties/items/properties/id",
+                "type": "integer"
+              },
+              "last_visited": {
+                "id": "/properties/data/properties/items/properties/last_visited",
+                "type": "integer"
+              },
+              "learning_language": {
+                "id": "/properties/data/properties/items/properties/learning_language",
+                "type": "string"
+              },
+              "lessons_completed": {
+                "id": "/properties/data/properties/items/properties/lessons_completed",
+                "type": "integer"
+              },
+              "name": {
+                "id": "/properties/data/properties/items/properties/name",
+                "type": "string"
+              },
+              "profile_picture": {
+                "id": "/properties/data/properties/items/properties/profile_picture",
+                "type": "string"
+              },
+              "progress": {
+                "id": "/properties/data/properties/items/properties/progress",
+                "type": "integer"
+              },
+              "session_created_at": {
+                "id": "/properties/data/properties/items/properties/session_created_at",
+                "type": "integer"
+              },
+              "session_length_30d": {
+                "id": "/properties/data/properties/items/properties/session_length_30d",
+                "type": "integer"
+              },
+              "session_length_3d": {
+                "id": "/properties/data/properties/items/properties/session_length_3d",
+                "type": "integer"
+              },
+              "session_length_7d": {
+                "id": "/properties/data/properties/items/properties/session_length_7d",
+                "type": "integer"
+              },
+              "session_length_lifetime": {
+                "id": "/properties/data/properties/items/properties/session_length_lifetime",
+                "type": "integer"
+              },
+              "session_updated_at": {
+                "id": "/properties/data/properties/items/properties/session_updated_at",
+                "type": "integer"
+              },
+              "uid": {
+                "id": "/properties/data/properties/items/properties/uid",
+                "type": "integer"
+              },
+              "units_completed": {
+                "id": "/properties/data/properties/items/properties/units_completed",
+                "type": "integer"
+              },
+              "starting_level": {
+                "id": "/properties/top_students/items/properties/starting_level",
+                "type": ["string", "null"]
+              },
+              "learning_time": {
+                "id": "/properties/top_students/items/properties/learning_time",
+                "type": "integer"
+              }
+            },
+            "required": [
+              "lessons_completed",
+              "name",
+              "current_level",
+              "learning_language",
+              "last_visited",
+              "expires_at",
+              "id",
+              "activities_completed",
+              "profile_picture",
+              "progress",
+              "certificates",
+              "units_completed",
+              "starting_level",
+              "learning_time",
+              "classroom_names",
+              "email",
+              "uid"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        },
+        "count": {
+          "id": "/properties/data/properties/count",
+          "type": "integer"
+        },
+        "next": {
+          "id": "/properties/data/properties/next",
+          "type": "integer"
+        }      },
+      "required": [
+        "list",
+        "count",
+        "next"
+      ],
+      "type": "object"
+    },
+    "status": {
+      "id": "/properties/status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "status",
+    "data"
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "createProClassroom",
+  "additionalProperties": false,
+  "properties": {
+    "data": {
+      "additionalProperties": false,
+      "id": "/properties/data",
+      "properties": {
+        "id": {
+          "id": "/properties/data/properties/id",
+          "type": "integer"
+        },
+        "instructors": {
+          "additionalItems": false,
+          "id": "/properties/data/properties/instructors",
+          "items": {},
+          "type": "array"
+        },
+        "language": {
+          "id": "/properties/data/properties/language",
+          "type": "string"
+        },
+        "name": {
+          "id": "/properties/data/properties/name",
+          "type": "string"
+        }
+      },
+      "required": [
+        "instructors",
+        "id",
+        "language",
+        "name"
+      ],
+      "type": "object"
+    },
+    "status": {
+      "id": "/properties/status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "status",
+    "data"
+  ],
+  "type": "object"
+}

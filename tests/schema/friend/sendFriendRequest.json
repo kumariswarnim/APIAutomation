@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "sendFriendRequest",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "type": "string",
+      "id": "status"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "auto_accept": {
+          "type": "boolean",
+          "id": "auto_accept"
+        }
+      },
+      "id": "data",
+      "required": [
+        "auto_accept"
+      ]
+    }
+  },
+  "required": [
+    "status",
+    "data"
+  ]
+}

@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "id": "getASpecificInstitution",
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "id": "/properties/status",
+      "type": "string"
+    },
+    "data": {
+      "id": "/properties/data",
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "institution": {
+          "id": "/properties/data/properties/institution",
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "id": {
+              "id": "/properties/data/properties/institution/properties/id",
+              "type": "integer"
+            },
+            "name": {
+              "id": "/properties/data/properties/institution/properties/name",
+              "type": "string"
+            },
+            "internal_name": {
+              "id": "/properties/data/properties/institution/properties/internal_name",
+              "type": "string"
+            },
+            "active": {
+              "id": "/properties/data/properties/institution/properties/active",
+              "type": "boolean"
+            },
+            "created_at": {
+              "id": "/properties/data/properties/institution/properties/created_at",
+              "type": "integer"
+            },
+            "licence_model": {
+              "id": "/properties/data/properties/institution/properties/licence_model",
+              "type": "string"
+            },
+            "student_expiration_limit": {
+              "id": "/properties/data/properties/institution/properties/student_expiration_limit",
+              "oneOf": [
+                {
+                  "type": "integer"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            },
+            "instructor_expiration_limit": {
+              "id": "/properties/data/properties/institution/properties/instructor_expiration_limit",
+              "type": "null"
+            },
+            "specific_content": {
+              "id": "/properties/data/properties/institution/properties/specific_content",
+              "type": "boolean"
+            },
+            "deleted_at": {
+              "id": "/properties/data/properties/institution/properties/deleted_at",
+              "type": "null"
+            },
+            "expiry_date": {
+              "id": "/properties/data/properties/institution/properties/expiry_date",
+              "type": "null"
+            }
+          },
+          "required": [
+            "id",
+            "name",
+            "internal_name",
+            "active",
+            "created_at",
+            "licence_model",
+            "student_expiration_limit",
+            "instructor_expiration_limit",
+            "specific_content",
+            "deleted_at",
+            "expiry_date"
+          ]
+        }
+      },
+      "required": [
+        "institution"
+      ]
+    }
+  },
+  "required": [
+    "status",
+    "data"
+  ]
+}

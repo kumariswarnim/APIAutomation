@@ -1,0 +1,19 @@
+{
+    "name": "apiAutomation",
+    "description": "Tests that validate our API endpoints",
+    "authors": [
+        {
+            "name": "Swarnim Kumari",
+            "email": "swarnim@busuu.com"
+        },
+        {
+            "name": "Richard Chernanko",
+            "email": "richard@busuu.com"
+        }
+    ],
+    "require": {
+        "codeception/codeception": "^2.2",
+        "justinrainbow/json-schema": "^4.1",
+        "flow/jsonpath": "^0.3.4"
+    }
+}

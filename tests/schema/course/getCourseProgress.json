@@ -1,0 +1,144 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "getCourseProgress",
+  "properties": {
+    "certificates": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "patternProperties": {
+            "^(enc|es|de|fr)$": {
+              "id": "/properties/certificates",
+              "properties": {
+                "completedAt": {
+                  "id": "/properties/completedAt",
+                  "type": "integer"
+                },
+                "grade": {
+                  "id": "/properties/grade",
+                  "type": "string"
+                },
+                "id": {
+                  "id": "/properties/id",
+                  "type": "integer"
+                },
+                "lang": {
+                  "id": "/properties/lang",
+                  "type": "string"
+                },
+                "level": {
+                  "id": "/properties/level",
+                  "type": "string"
+                },
+                "maxScore": {
+                  "id": "/properties/maxScore",
+                  "type": "integer"
+                },
+                "nextAttemptAllowed": {
+                  "id": "/properties/nextAttemptAllowed",
+                  "type": "string"
+                },
+                "nextAttemptDelay": {
+                  "id": "/properties/nextAttemptDelay",
+                  "type": "integer"
+                },
+                "objectiveId": {
+                  "id": "/properties/objectiveId",
+                  "type": "string"
+                },
+                "score": {
+                  "id": "/properties/score",
+                  "type": "integer"
+                },
+                "success": {
+                  "id": "/properties/success",
+                  "type": "string"
+                },
+                "uid": {
+                  "id": "/properties/uid",
+                  "type": "integer"
+                },
+                "uniqueId": {
+                  "id": "/properties/uniqueId",
+                  "type": "string"
+                },
+                "valid": {
+                  "id": "/properties/valid",
+                  "type": "boolean"
+                },
+                "pdfLink": {
+                  "id": "/properties/pdfLink",
+                  "oneOf": [
+                    {
+                      "type": "string"
+                    },
+                    {
+                      "type": "null"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "required": [
+            "completedAt",
+            "grade",
+            "id",
+            "lang",
+            "level",
+            "maxScore",
+            "nextAttemptAllowed",
+            "nextAttemptDelay",
+            "objectiveId",
+            "score",
+            "success",
+            "uid",
+            "uniqueId",
+            "valid",
+            "pdfLink"
+          ]
+        },
+        {
+          "items": {},
+          "type": "object"
+        },
+        {
+          "type": "array"
+        }
+      ]
+    },
+    "type": "object",
+    "progress": {
+      "id": "/properties/progress",
+      "additionalProperties": false,
+      "patternProperties": {
+        "^(enc|es|de|fr|it|pt|pl|ru|tr|ar|ja|zh)$": {
+          "id": "/properties/progress/properties/enc",
+          "patternProperties": {
+            "^(activity_.$|exercise.$|objective.$)": {
+              "id": "/properties/progress/properties/enc/properties/activity_entity_11_1_2",
+              "properties": {
+                "status": {
+                  "id": "/properties/progress/properties/enc/properties/activity_entity_11_1_2/properties/status",
+                  "type": "integer"
+                },
+                "updated": {
+                  "id": "/properties/progress/properties/enc/properties/activity_entity_11_1_2/properties/updated",
+                  "type": "integer"
+                }
+              },
+              "type": "object"
+            }
+          },
+          "type": "object"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "required": [
+    "progress",
+    "certificates"
+  ]
+}

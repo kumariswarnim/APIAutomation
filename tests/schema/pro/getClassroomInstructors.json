@@ -1,0 +1,50 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "getClassroomInstructors",
+  "additionalProperties": false,
+  "properties": {
+    "data": {
+      "additionalItems": false,
+      "id": "/properties/data",
+      "items": {
+        "additionalProperties": false,
+        "id": "/properties/data/items",
+        "properties": {
+          "created_at": {
+            "id": "/properties/data/items/properties/created_at",
+            "type": "integer"
+          },
+          "id": {
+            "id": "/properties/data/items/properties/id",
+            "type": "integer"
+          },
+          "institution_user_id": {
+            "id": "/properties/data/items/properties/institution_user_id",
+            "type": "integer"
+          },
+          "type": {
+            "id": "/properties/data/items/properties/type",
+            "type": "string"
+          }
+        },
+        "required": [
+          "created_at",
+          "type",
+          "id",
+          "institution_user_id"
+        ],
+        "type": "object"
+      },
+      "type": "array"
+    },
+    "status": {
+      "id": "/properties/status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "status",
+    "data"
+  ],
+  "type": "object"
+}

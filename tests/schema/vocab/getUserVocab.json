@@ -1,0 +1,139 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "getUserVocab",
+  "properties": {
+    "vocabulary": {
+      "id": "/properties/vocabulary",
+      "items": {
+        "id": "/properties/vocabulary/items",
+        "properties": {
+          "entity_id": {
+            "id": "/properties/vocabulary/items/properties/entity_id",
+            "type": "string"
+          },
+          "saved": {
+            "id": "/properties/vocabulary/items/properties/saved",
+            "type": "boolean"
+          },
+          "strength": {
+            "id": "/properties/vocabulary/items/properties/strength",
+            "type": "integer"
+          },
+          "update_time": {
+            "id": "/properties/vocabulary/items/properties/update_time",
+            "type": "integer"
+          }
+        },
+        "type": "object",
+        "additionalProperties": false
+      },
+      "type": "array"
+    },
+    "entityMap": {
+      "id": "/properties/entityMap",
+      "patternProperties": {
+        "^entity_.$": {
+          "oneOf": [
+            {
+              "id": "/properties/entityMap/properties/entity__e401ac81",
+              "properties": {
+                "image": {
+                  "id": "/properties/entityMap/properties/entity__e401ac81/properties/image",
+                  "type": "string"
+                },
+                "keyphrase": {
+                  "id": "/properties/entityMap/properties/entity__e401ac81/properties/keyphrase",
+                  "type": "string"
+                },
+                "phrase": {
+                  "id": "/properties/entityMap/properties/entity__e401ac81/properties/phrase",
+                  "type": "string"
+                },
+                "vocabulary": {
+                  "id": "/properties/entityMap/properties/entity__e401ac81/properties/vocabulary",
+                  "type": "boolean"
+                }
+              },
+              "type": "object",
+              "additionalProperties": false
+            },
+            {
+              "type": "array"
+            }
+          ]
+        }
+      }
+    },
+    "type": "object",
+    "additionalProperties": false,
+    "translationMap": {
+      "id": "translationMap",
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "patternProperties": {
+            "^(str_.)$": {
+              "type": "object",
+              "additionalProperties": false,
+              "oneOf": [
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "patternProperties": {
+                    "^(enc|es|de|fr|it|pt|pl|ru|tr|vi|ar|ja|zh|ind|ko)$": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "minProperties": 1,
+                      "properties": {
+                        "value": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                },
+                {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "patternProperties": {
+                    "^(enc|es|de|fr|it|pt|pl|ru|tr|vi|ar|ja|zh|ind|ko)$": {
+                      "type": "object",
+                      "additionalProperties": false,
+                      "properties": {
+                        "value": {
+                          "type": "string"
+                        },
+                        "audio": {
+                          "type": "string"
+                        }
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "type": "object"
+        },
+        {
+          "type": "array"
+        }
+        ]
+    },
+    "timestamp": {
+      "id": "/properties/translationMap/properties/timestamp",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "vocabulary",
+    "entityMap",
+    "translationMap",
+    "timestamp"
+  ],
+  "type": "object",
+  "additionalProperties": false
+}

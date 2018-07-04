@@ -1,0 +1,111 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "getInstitutionAdmins",
+  "additionalProperties": false,
+  "properties": {
+    "data": {
+      "additionalProperties": false,
+      "id": "/properties/data",
+      "properties": {
+        "admins": {
+          "id": "/properties/data/properties/admins",
+          "items": {
+            "additionalProperties": false,
+            "id": "/properties/data/properties/admins/items",
+            "properties": {
+              "classrooms": {
+                "id": "/properties/data/properties/admins/items/properties/classrooms",
+                "items": {
+                  "additionalProperties": false,
+                  "id": "/properties/data/properties/admins/items/properties/classrooms/items",
+                  "properties": {
+                    "id": {
+                      "id": "/properties/data/properties/admins/items/properties/classrooms/items/properties/id",
+                      "type": "integer"
+                    },
+                    "instructors": {
+                      "id": "/properties/data/properties/admins/items/properties/classrooms/items/properties/instructors",
+                      "items": {},
+                      "type": "array"
+                    },
+                    "language": {
+                      "id": "/properties/data/properties/admins/items/properties/classrooms/items/properties/language",
+                      "type": "string"
+                    },
+                    "name": {
+                      "id": "/properties/data/properties/admins/items/properties/classrooms/items/properties/name",
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "instructors",
+                    "id",
+                    "language",
+                    "name"
+                  ],
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              "email": {
+                "id": "/properties/data/properties/admins/items/properties/email",
+                "type": "string"
+              },
+              "expires_at": {
+                "id": "/properties/data/properties/admins/items/properties/expires_at",
+                "oneOf": [
+                  {
+                    "type": "integer"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "id": {
+                "id": "/properties/data/properties/admins/items/properties/id",
+                "type": "integer"
+              },
+              "name": {
+                "id": "/properties/data/properties/admins/items/properties/name",
+                "type": "string"
+              },
+              "profile_picture": {
+                "id": "/properties/data/properties/admins/items/properties/profile_picture",
+                "type": "string"
+              },
+              "students_count": {
+                "id": "/properties/data/properties/admins/items/properties/students_count",
+                "type": "integer"
+              }
+            },
+            "required": [
+              "classrooms",
+              "name",
+              "students_count",
+              "expires_at",
+              "id",
+              "profile_picture",
+              "email"
+            ],
+            "type": "object"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "admins"
+      ],
+      "type": "object"
+    },
+    "status": {
+      "id": "/properties/status",
+      "type": "string"
+    }
+  },
+  "required": [
+    "status",
+    "data"
+  ],
+  "type": "object"
+}

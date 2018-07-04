@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "validateDeleteFriend",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "type": "string",
+      "id": "status"
+    },
+    "data": {
+      "type": "string",
+      "id": "data"
+    }
+  },
+  "required": [
+    "status",
+    "data"
+  ]
+}

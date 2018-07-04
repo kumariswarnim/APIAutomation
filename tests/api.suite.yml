@@ -1,0 +1,90 @@
+class_name: ApiTester
+
+modules:
+   enabled:
+       - REST:
+           depends: PhpBrowser
+           part: json
+       - Asserts
+       - \Module\Exercise
+       - \Module\User
+       - \Module\UserAvatar
+       - \Module\Friend
+       - \Module\Pro
+       - \Module\Course
+       - \Module\Vocabulary
+       - \Module\Referral
+       - \Module\ProgressStats
+       - \Module\StudyPlan
+
+env:
+    integration-01:
+        modules:
+            config:
+                REST:
+                    url: https://api-integration-01.internal.busuu.com
+    integration-02:
+        modules:
+            config:
+                REST:
+                    url: https://api-integration-02.internal.busuu.com
+    integration-03:
+        modules:
+            config:
+                REST:
+                    url: https://api-integration-03.internal.busuu.com
+    integration-04:
+        modules:
+            config:
+                REST:
+                    url: https://api-integration-04.internal.busuu.com
+    integration-05:
+        modules:
+            config:
+                REST:
+                    url: https://api-integration-05.internal.busuu.com
+    integration-06:
+        modules:
+            config:
+                REST:
+                    url: https://api-integration-06.internal.busuu.com
+    integration-07:
+        modules:
+            config:
+                REST:
+                    url: https://api-integration-07.internal.busuu.com
+    integration-08:
+        modules:
+            config:
+                REST:
+                    url: https://api-integration-08.internal.busuu.com
+    integration-09:
+        modules:
+            config:
+                REST:
+                    url: https://api-integration-09.internal.busuu.com
+    integration-16:
+        modules:
+            config:
+                REST:
+                    url: https://api-integration-16.internal.busuu.com
+    staging-01:
+            modules:
+                config:
+                    REST:
+                        url: https://api-staging-02.internal.busuu.com
+    staging-02:
+        modules:
+            config:
+                REST:
+                    url: https://api-staging-02.internal.busuu.com
+    production:
+        modules:
+            config:
+                REST:
+                    url: https://api.busuu.com
+    dev:
+        modules:
+            config:
+                REST:
+                    url: https://api-dev.internal.busuu.com

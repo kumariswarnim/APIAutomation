@@ -1,0 +1,40 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "rateExercise",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "type": "string",
+      "id": "status"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "integer",
+          "id": "id"
+        },
+        "avg": {
+          "type": "integer",
+          "id": "avg"
+        },
+        "total_rates": {
+          "type": "integer",
+          "id": "total_rates"
+        }
+      },
+      "id": "data",
+      "required": [
+        "id",
+        "avg",
+        "total_rates"
+      ]
+    }
+  },
+  "required": [
+    "status",
+    "data"
+  ]
+}

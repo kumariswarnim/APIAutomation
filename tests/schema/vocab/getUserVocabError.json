@@ -1,0 +1,18 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "getUserVocabError",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "message": {
+      "type": "string",
+      "id": "message",
+      "enum": [
+        "Invalid access token"
+      ]
+    }
+  },
+  "required": [
+    "message"
+  ]
+}

@@ -1,0 +1,405 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "getCourseStructure",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "courses": {
+      "id": "/properties/courses",
+      "properties": {
+        "(enc|fr|de|it|pt|ar|es|ru|ja|zh|pl|tr)": {
+          "id": "/properties/courses/properties/fr",
+          "items": {
+            "id": "/properties/courses/properties/fr/items",
+            "properties": {
+              "groupLevel": {
+                "id": "/properties/courses/properties/fr/items/properties/groupLevel",
+                "type": "string"
+              },
+              "groupPart": {
+                "id": "/properties/courses/properties/fr/items/properties/groupPart",
+                "type": "string"
+              },
+              "id": {
+                "id": "/properties/courses/properties/fr/items/properties/id",
+                "type": "string"
+              },
+              "level": {
+                "id": "/properties/courses/properties/fr/items/properties/level",
+                "type": "string"
+              },
+              "levelId": {
+                "id": "/properties/courses/properties/fr/items/properties/levelId",
+                "oneOf": [
+                  {
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "name": {
+                "id": "/properties/courses/properties/fr/items/properties/name",
+                "type": "string"
+              },
+              "objectives": {
+                "id": "/properties/courses/properties/fr/items/properties/objectives",
+                "items": {
+                  "id": "/properties/courses/properties/fr/items/properties/objectives/items",
+                  "properties": {
+                    "class": {
+                      "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/class",
+                      "type": "string"
+                    },
+                    "content": {
+                      "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/content",
+                      "properties": {
+                        "color_1": {
+                          "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/content/properties/color_1",
+                          "oneOf": [
+                            {
+                              "type": "null"
+                            },
+                            {
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "color_2": {
+                          "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/content/properties/color_2",
+                          "oneOf": [
+                            {
+                              "type": "null"
+                            },
+                            {
+                              "type": "string"
+                            }
+                          ]
+                        },
+                        "description": {
+                          "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/content/properties/description",
+                          "type": "string"
+                        },
+                        "image": {
+                          "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/content/properties/image",
+                          "oneOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "image_svg": {
+                          "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/content/properties/image_svg",
+                          "oneOf": [
+                            {
+                              "type": "string"
+                            },
+                            {
+                              "type": "null"
+                            }
+                          ]
+                        },
+                        "title": {
+                          "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/content/properties/title",
+                          "type": "string"
+                        }
+                      },
+                      "type": "object",
+                      "required": [
+                        "title",
+                        "image",
+                        "image_svg",
+                        "description",
+                        "color_1",
+                        "color_2"
+                      ]
+                    },
+                    "events": {
+                      "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/events",
+                      "additionalProperties": false,
+                      "properties": {
+                        "onComplete": {
+                          "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/events/properties/onComplete",
+                          "additionalProperties": false,
+                          "type": "object"
+                        },
+                        "onPass": {
+                          "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/events/properties/onPass",
+                          "additionalProperties": false,
+                          "type": "object"
+                        }
+                      },
+                      "type": "object",
+                      "required": [
+                        "onComplete",
+                        "onPass"
+                      ]
+                    },
+                    "id": {
+                      "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/id",
+                      "type": "string"
+                    },
+                    "levelDescription": {
+                      "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/levelDescription",
+                      "type": "string"
+                    },
+                    "levelImage": {
+                      "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/levelImage",
+                      "type": "null"
+                    },
+                    "levelName": {
+                      "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/levelName",
+                      "type": "string"
+                    },
+                    "levelTitle": {
+                      "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/levelTitle",
+                      "type": "string"
+                    },
+                    "parentId": {
+                      "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/parentId",
+                      "type": "string"
+                    },
+                    "premium": {
+                      "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/premium",
+                      "type": "boolean"
+                    },
+                    "required": {
+                      "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/required",
+                      "type": "boolean"
+                    },
+                    "structure": {
+                      "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure",
+                      "items": {
+                        "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items",
+                        "properties": {
+                          "class": {
+                            "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/class",
+                            "type": "string"
+                          },
+                          "content": {
+                            "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/content",
+                            "properties": {
+                              "images": {
+                                "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/content/properties/images",
+                                "oneOf": [
+                                  {
+                                    "type": "array"
+                                  },
+                                  {
+                                    "type": "null"
+                                  }
+                                ]
+                              },
+                              "title": {
+                                "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/content/properties/title",
+                                "type": "string"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "events": {
+                            "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/events",
+                            "properties": {
+                              "onComplete": {
+                                "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/events/properties/onComplete",
+                                "type": "object"
+                              },
+                              "onPass": {
+                                "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/events/properties/onPass",
+                                "type": "object"
+                              }
+                            },
+                            "type": "object"
+                          },
+                          "id": {
+                            "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/id",
+                            "type": "string"
+                          },
+                          "isNew": {
+                            "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/isNew",
+                            "type": "boolean"
+                          },
+                          "parentId": {
+                            "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/parentId",
+                            "type": "string"
+                          },
+                          "premium": {
+                            "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/premium",
+                            "type": "boolean"
+                          },
+                          "required": {
+                            "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/required",
+                            "type": "boolean"
+                          },
+                          "structure": {
+                            "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/structure",
+                            "items": {
+                              "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/structure/items",
+                              "properties": {
+                                "class": {
+                                  "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/structure/items/properties/class",
+                                  "type": "string"
+                                },
+                                "content": {
+                                  "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/structure/items/properties/content",
+                                  "type": "object"
+                                },
+                                "events": {
+                                  "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/structure/items/properties/events",
+                                  "properties": {
+                                    "onComplete": {
+                                      "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/structure/items/properties/events/properties/onComplete",
+                                      "properties": {
+                                        "berries": {
+                                          "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/structure/items/properties/events/properties/onComplete/properties/berries",
+                                          "type": "integer"
+                                        }
+                                      },
+                                      "type": "object"
+                                    },
+                                    "onPass": {
+                                      "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/structure/items/properties/events/properties/onPass",
+                                      "type": "object"
+                                    }
+                                  },
+                                  "type": "object"
+                                },
+                                "icon": {
+                                  "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/structure/items/properties/icon",
+                                  "type": "string"
+                                },
+                                "id": {
+                                  "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/structure/items/properties/id",
+                                  "type": "string"
+                                },
+                                "isNew": {
+                                  "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/structure/items/properties/isNew",
+                                  "type": "boolean"
+                                },
+                                "parentId": {
+                                  "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/structure/items/properties/parentId",
+                                  "type": "string"
+                                },
+                                "premium": {
+                                  "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/structure/items/properties/premium",
+                                  "type": "boolean"
+                                },
+                                "required": {
+                                  "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/structure/items/properties/required",
+                                  "type": "boolean"
+                                },
+                                "structure": {
+                                  "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/structure/items/properties/structure",
+                                  "items": {},
+                                  "type": "array"
+                                },
+                                "type": {
+                                  "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/structure/items/properties/type",
+                                  "type": "string"
+                                }
+                              },
+                              "type": "object"
+                            },
+                            "type": "array"
+                          },
+                          "type": {
+                            "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/structure/items/properties/type",
+                            "type": "string"
+                          }
+                        },
+                        "type": "object"
+                      },
+                      "type": "array"
+                    },
+                    "type": {
+                      "id": "/properties/courses/properties/fr/items/properties/objectives/items/properties/type",
+                      "type": "string"
+                    }
+                  },
+                  "type": "object"
+                },
+                "type": "array",
+                "required": [
+                  "id",
+                  "parentId",
+                  "levelName",
+                  "class",
+                  "type",
+                  "required",
+                  "premium",
+                  "content",
+                  "structure"
+                ]
+              }
+            },
+            "type": "object",
+            "required": [
+              "id",
+              "name",
+              "level",
+              "levelId",
+              "groupLevel",
+              "groupPart",
+              "objectives"
+            ]
+          },
+          "type": "array"
+        }
+      },
+      "type": "object"
+    },
+    "translationMap": {
+      "id": "translationMap",
+      "type": "object",
+      "patternProperties": {
+        "^str_.$": {
+          "type": "object",
+          "oneOf": [
+            {
+              "type": "object",
+              "patternProperties": {
+                "^(enc|es|de|fr|it|pt|pl|ru|tr|vi|ar|ja|zh|ind|ko)$": {
+                  "type": "object",
+                  "minProperties": 1,
+                  "properties": {
+                    "value": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            },
+            {
+              "type": "object",
+              "patternProperties": {
+                "^(enc|es|de|fr|it|pt|pl|ru|tr|vi|ar|ja|zh|ind|ko)$": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string"
+                    },
+                    "audio": {
+                      "type": "string"
+                    }
+                  }
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "timestamp": {
+      "id": "/properties/translationMap/properties/timestamp",
+      "type": "integer"
+    }
+  },
+  "required": [
+    "courses",
+    "translationMap"
+  ]
+}

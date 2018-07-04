@@ -1,0 +1,111 @@
+{
+  "$schema": "http://json-schema.org/draft-06/schema#",
+  "id": "getReferralInfo",
+  "type": "object",
+  "additionalProperties": "false",
+  "properties": {
+    "status": {
+      "id": "status",
+      "type": "string"
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": "false",
+      "properties": {
+        "referral_link": {
+          "id": "referral_link",
+          "type": ["string", "null"]
+        },
+        "program_active": {
+          "id": "program_active",
+          "type": "boolean"
+        },
+        "status": {
+          "id": "status",
+          "type": "string",
+          "enum": [
+            "premium"
+          ]
+        },
+        "users_referred": {
+          "id": "users_referred",
+          "type": "array",
+          "items": {
+            "id": "items",
+            "type": "object",
+            "additionalProperties": "false",
+            "properties": {
+              "referrals_threshold": {
+                "id": "referrals_threshold",
+                "type": "integer"
+              },
+              "users": {
+                "id": "users",
+                "type": "array",
+                "items": {
+                  "id": "items",
+                  "type": "object",
+                  "additionalProperties": "false",
+                  "properties": {
+                    "avatar": {
+                      "id": "avatar",
+                      "type": "string"
+                    },
+                    "has_avatar": {
+                      "id": "has_avatar",
+                      "type": "boolean"
+                    },
+                    "uid": {
+                      "id": "uid",
+                      "type": "integer"
+                    }
+                  },
+                  "required": [
+                    "avatar",
+                    "has_avatar",
+                    "uid"
+                  ]
+                }
+              }
+            },
+            "required": [
+              "referrals_threshold",
+              "users"
+            ]
+          }
+        },
+        "expire_at": {
+          "id": "expire_at",
+          "type": ["integer", "null"]
+        },
+        "statuses_log": {
+          "id": "statuses_log",
+          "type": "object",
+          "additionalProperties": "false",
+          "properties": {
+            "advocate_premium": {
+              "id": "advocate_premium",
+              "type": "boolean"
+            },
+            "referred_premium": {
+              "id": "referred_premium",
+              "type": "boolean"
+            }
+          },
+          "required": [
+            "advocate_premium",
+            "referred_premium"
+          ]
+        }
+      },
+      "required": [
+        "referral_link",
+        "program_active",
+        "status",
+        "users_referred",
+        "expire_at",
+        "statuses_log"
+      ]
+    }
+  }
+}
